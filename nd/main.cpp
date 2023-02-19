@@ -118,3 +118,85 @@ using namespace std;
 //   cout << i << "\n";
 
 // }
+
+// main() {
+//     int arr[] {1, 2, 3};
+//     // arr[1] = 1;
+
+//     for (int i : arr) {
+//         cout << i << "";
+//     }
+//     cout << endl;
+
+//     for (int i = 0; i < 5; i++) {
+//         cout << arr[i] << " ";
+//     }
+// }
+main() {
+    int four = 4; 
+    int* fourPtr = &four;
+    int& fourRef = four;
+
+    cout << "four: " << four << endl;
+    // cout << "*four: " << *four << endl; // This is invalid becouse the dereference operator requires a pointer.
+    cout << "&four: " << &four << endl;
+    cout << "fourPtr: " << fourPtr << endl;
+    cout << "*fourPtr: " << *fourPtr << endl;
+    cout << "&fourPtr: " << &fourPtr << endl;
+    cout << "fourRef: " << fourRef << endl;
+    // cout << "*fourRef: " << *fourRef << endl; // This is invalid for the same reasons.
+    cout << "&fourRef: " << &fourRef << endl;
+
+    cout << endl << endl << "fourRef = 6" << endl << endl;
+    
+    fourRef = 6;
+    cout << "four: " << four << endl;
+    cout << "&four: " << &four << endl;
+    cout << "fourPtr: " << fourPtr << endl;
+    cout << "*fourPtr: " << *fourPtr << endl;
+    cout << "&fourPtr: " << &fourPtr << endl;
+    cout << "fourRef: " << fourRef << endl;
+    cout << "&fourRef: " << &fourRef << endl;
+
+    cout << endl << endl << "*fourPtr = 8" << endl << endl;
+
+    *fourPtr = 8;
+    
+    cout << "four: " << four << endl;
+    cout << "&four: " << &four << endl;
+    cout << "fourPtr: " << fourPtr << endl;
+    cout << "*fourPtr: " << *fourPtr << endl;
+    cout << "&fourPtr: " << &fourPtr << endl;
+    cout << "fourRef: " << fourRef << endl;
+    cout << "&fourRef: " << &fourRef << endl;
+
+    // fourPtr = &12; //This means nothing because '12' has no address because it is not stored in any memory.
+
+    // cout << "four: " << four << endl;
+    // cout << "&four: " << &four << endl;
+    // cout << "fourPtr: " << fourPtr << endl;
+    // cout << "*fourPtr: " << *fourPtr << endl;
+    // cout << "&fourPtr: " << &fourPtr << endl;
+    // cout << "fourRef: " << fourRef << endl;
+    // cout << "&fourRef: " << &fourRef << endl;
+   
+    cout << endl << endl << "fourPtr = &twelve" << endl << endl;
+    int twelve = 12;
+    fourPtr = &twelve;
+
+    cout << "four: " << four << endl;
+    cout << "&four: " << &four << endl;
+    cout << "fourPtr: " << fourPtr << endl;
+    cout << "*fourPtr: " << *fourPtr << endl;
+    cout << "&fourPtr: " << &fourPtr << endl;
+    cout << "fourRef: " << fourRef << endl;
+    cout << "&fourRef: " << &fourRef << endl;
+    // int* oldFourPtrAddress = (int *)0x16ef06fb4;
+    // cout << endl << "*oldFourPtrAddress" << *oldFourPtrAddress<< endl;
+
+    // This changes fourPtr only. Its like, now the pointer on the holds some other memory address
+    // and has lost control over the last one.
+    
+
+    cout << 'The program ends here.';
+}
