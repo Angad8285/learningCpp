@@ -216,21 +216,23 @@ using namespace std;
 //   return 0;
 // }
 
-class MyClass {
-  public:    // Public access specifier
-    int x;   // Public attribute
-  private:   // Private access specifier
-    int y;   // Private attribute
-};
+// class MyClass {
+//   public:    // Public access specifier
+//     int x;   // Public attribute
+//   private:   // Private access specifier
+//     int y;   // Private attribute
+// };
 
-int main() {
-  MyClass myObj;
-  myObj.x = 25;  // Allowed (public)
-  myObj.y = 50;  // Not allowed (private)
-  return 0;
-}
+// int main() {
+//   MyClass myObj;
+//   myObj.x = 25;  // Allowed (public)
+// //   myObj.y = 50;  // Not allowed (private)
+//   return 0;
+// }
 
 // It is possible to access private members of a class using a public method inside the same class
 // Read articles from ww3 schools.
 // Done with the overview part
 // will now solely read e balaguruswamy for thorough understanding
+
+

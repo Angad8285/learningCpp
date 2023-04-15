@@ -1,5 +1,6 @@
 #include<iostream>
 #include <cstring>
+#include<cmath>
 using namespace std;
 
 
@@ -660,3 +661,456 @@ using namespace std;
 //     return 0;
 // }
 
+/////////////// Q4
+// class test {
+//     int i;
+//     public:
+//         test();
+//         test(int);
+//         void display();
+//         inline void increment();
+//         ~test();
+// };
+// test::test() {
+//     cout << "no argument constructor was called." << endl;
+// }
+// test::test(int a) {
+//     i = a;
+//     cout << "i was set to " << a << endl;
+// }
+// void test::display() {
+//     cout << "the value of i is: " << i << endl;
+// }
+// inline void test::increment() {
+//     i*=2;
+//     cout << "i was doubled." << endl;
+// }
+// test::~test() {
+//     cout << "patan-e-tabish" << endl;
+// }
+
+// main() {
+//     // test obj(3);
+//     // obj.increment();
+//     // obj.display();
+
+//     test * obj = new test(5);
+//     obj->increment();
+//     obj->display();
+//     delete obj;
+//     obj = NULL;
+// }
+
+//////////// Q5
+// class b;
+// class a {
+//     int one;
+//     public: 
+//         a (int p) {
+//             one = p;
+//         }
+//         void display() {
+//             cout << "The value of one of a class is: " << one << endl;
+//         }
+//         void swap(b&);
+// };
+// class b {
+//     int two;
+//     public:
+//         b(int q) {
+//             two = q;
+//         }
+//         void display() {
+//             cout << "The value of two of class b is: " << two << endl;
+//         }
+//         friend void a::swap(b&);
+// };
+
+// void a::swap(b &B) {
+//     int bin = one;
+//     one = B.two;
+//     B.two = bin;
+//     cout << "Swap done." << endl;
+// }
+
+// main() {
+//     a A(1);
+//     b B(2);
+//     A.display();
+//     B.display();
+//     A.swap(B);
+//     A.display();
+//     B.display();
+// }
+
+// class a {
+//     private:
+//         int pri = 1;
+//     protected:
+//         int pro = 2;
+//     public:
+//         int pub = 3;
+// };
+
+// class b:private a {
+
+// };
+
+// main() {
+//     a aobj;
+//     b bobj;
+//     // cout << aobj.pri << endl;//Not Possible
+//     // cout << aobj.pro << endl;//Not Possible
+//     cout << aobj.pub << endl;
+//     cout << bobj.pri << endl;//Not Possible
+//     cout << bobj.pro << endl;//Not Possible
+//     cout << bobj.pub << endl;
+// }
+
+////////////////////////////////// INHERITANCE
+// class a {
+//     int a;
+//     public:
+        
+//         void set_a(int i) {
+//             a = i;
+//         }  
+//         int get_a () {
+//             return a;
+//         }
+// };
+
+// class b {
+//     protected:
+//         int square(int i) {
+//             return i*i;
+//         }
+//         int cube(int i) {
+//             return i*i*i;
+//         }
+// };
+
+// class c: protected a, protected b {
+//     public:
+//         c(int j) {
+//             set_a(j);
+//             cout << get_a() << endl;
+//         }
+//         int exeCube() {
+//             return cube (get_a());
+//         }
+//         int exeSquare() {
+//             return square(get_a());
+//         }
+//         ~c() {
+//             cout << "patan-e-tabish" << endl;
+//         }
+// };
+
+// main() {
+//     c obj(3);
+//     cout << obj.exeCube() << endl;
+//     cout << obj.exeSquare() << endl;
+// }
+
+// class a {
+//     protected:
+//         int i;
+//         int square(int i) {
+//             return i*i;
+//         }
+//         int cube(int i) {
+//             return i*i*i;
+//         }
+// };
+
+// class cu: protected a {
+//     public:
+//         cu(int j) {
+//             i = j;
+//         }
+//         int exeCube() {
+//             return cube(i);
+//         }
+// };
+
+// class sq: protected a {
+//     public: 
+//         sq (int j) {
+//             i =j;
+//         }
+//         int exeSquare() {
+//             return square(i);
+//         }
+// };
+
+// main() {
+//     cu objcu(3);
+//     cout << objcu.exeCube() << endl;
+//     sq objsq(3);
+//     cout << objsq.exeSquare() << endl;
+// }
+
+
+// class fruit {
+//     public:
+//         static int count;
+//         fruit() {
+//             count++;
+//             cout << "A fruit was added." << endl;
+//         }
+// };
+// class apple: public fruit {
+//     static int appleCount;
+//     public:
+//         apple() {
+//             appleCount++;
+//             // count++;
+//             cout << "An apple was added." << endl;
+//         }
+//         void display() {
+//             cout << "There are " << fruit::count << " and " << apple::appleCount << " apples in the basket" << endl;
+//         }
+// };
+// class mango: public fruit {
+//     static int mangoCount;
+//     public:
+//         mango() {
+//             mangoCount++;
+//             // count++;
+//             cout << "A mango was added." << endl;
+//         }
+//         void display() {
+//             cout << "There are " << fruit::count << " and " << mango::mangoCount << " mangoes in the basket" << endl;
+//         }
+// };
+// int fruit::count = 0, apple::appleCount = 0, mango::mangoCount = 0;
+
+// main() {
+//     mango mobj;
+//     apple aobj;
+//     aobj.display();
+//     mobj.display();
+// }
+
+// class a {
+//     int x;
+//     public:
+//         a (int i) {
+//             cout << "a constructor was called." << endl;
+//             x = i;
+//         }
+//         void display() {
+//             cout << "value of x in a class is: " << x << endl;
+//         }
+//         class b {
+//             int y;
+//             public:
+//                 b (int j) {
+//                     cout << "b constructor was called." << endl;
+//                     y =j;
+//                 }
+//                 void display() {
+//                     cout << "value of y in b class is: " << y << endl;
+//                 }
+//         };
+// };
+// main() {
+//     a aobj(3);
+//     aobj.display();
+//     a::b bobj(4);
+//     bobj.display();
+// }
+
+// class a {
+//     int i;
+//     public:
+//         a (int j = 0);
+//         void display() {
+//             cout << i << endl;
+//         }
+// };
+// a::a (int j) {
+//     i = j;
+// }
+
+// main() {
+//     a obj;
+//     obj.display();
+// }
+
+// class a {
+//     public:
+//         int i;
+//         void setI(int i) {
+//             this->i = i;
+//         }
+//         void display() {
+//             cout << i << endl;
+//         }
+// };
+
+// main() {
+//     a obj;
+//     int a:: *ptri = &a::i;
+//     obj.*ptri = 19;
+//     obj.display();
+//     void (a:: *ptrf)(int) = &a::setI; 
+//     (obj.*ptrf)(4);
+//     obj.display();
+// }
+
+// class matrix {
+//     const int l;
+//     int *arr;
+//     public: 
+//         matrix(int q) :l(q) {
+//             arr = new int[l];
+//             for (int i = 0; i < l; i++) {
+//                 cin >> arr[i];
+//             }
+//         }
+//         void display() {
+//             cout << l << endl;
+//             for (int i = 0; i < l; i++) {
+//                 cout << arr[i] << "\t";
+//             }
+//         }
+// };
+
+// main() {
+//     matrix obj(4);
+//     obj.display();
+
+// }
+
+
+// class a {
+//     int s;
+//     public:
+//         a(int i = 0);
+//         void display() {
+//             cout << s << endl;
+//         }
+// };
+// a::a(int i ) {
+//     s = i;
+//     cout << "constructor was called.";
+// }
+// main() {
+//     a *ptr = new a(4);
+//     // a obj;
+//     // obj.display();
+// }
+
+
+// int main()
+// {
+// int x;
+// int *p;
+// int *q;
+// p = new int[10];
+// q =p;
+// *p = 4;
+// for (int j=0; j<10; j++) {
+//     x = *p;
+//     p++;
+//     *p = x+ j;
+// }
+// for (int k = 0; k < 10; k++) {
+//     cout << *q << " ";
+//     q++;
+
+// }
+//  cout<<endl;
+// return 0;
+// }
+
+// class Base
+// { protected:
+// int a; 
+// public:
+// Base ()
+// { a=9; }
+// void display()
+// {
+// cout<<"The output is"<<a;
+// }
+// };
+// class Derived1: public Base {
+// public:
+// Derived1() { a=12; }
+// };
+// int main() {
+//     Derived1 ob;
+//     ob.display();
+// }
+
+// void poly(double a, double h)
+// {
+// cout<< "Function with float values called ";
+// }
+// void poly(int r, int s ) {
+// cout << "Function with integer values called ";
+// }
+// int main()
+// {
+//     poly(7.5, 9.7);
+//  }
+
+// main() {
+//     char name[20];
+//     cin.getline(name, 20);
+//     cout << name;
+// }
+// class property {
+//     public:
+//         property () {
+//             cout << "constructer was called." << endl;
+//         }
+//         ~property() {
+//             cout << "destructor was called." << endl;
+//         }
+// };
+
+// main() {
+//     property *ptr = new property[10];
+//     delete [] ptr;
+// }
+
+// class triangle;
+// class rectangle {
+//     int length, breadth;
+//     char colour[40];
+//     public:
+//         void setdata() {
+//             cin>>length>>breadth;
+//             // cin.getline(colour, 40);
+//         }
+//         friend int area(rectangle, triangle);
+// };
+// class triangle {
+//     int s1, s2, s3;
+//     char colour[49];
+//     public: 
+//         void setdata() {
+//             cin>>s1>>s2>>s3;
+//             // cin.getline(colour,49);
+//         }
+//         friend int area(rectangle, triangle);
+// };
+
+// int area(rectangle rec, triangle tri) {
+//     int recarea = rec.length*rec.breadth;
+//     int s = (tri.s1+tri.s2+tri.s3) / 2;
+//     float triarea = sqrt(s*(s-tri.s1)*(s-tri.s2)*(s-tri.s3));
+//     return recarea+ triarea;
+// }
+
+// main() {
+//     rectangle robj;
+//     triangle tobj;
+//     robj.setdata();
+//     tobj.setdata();
+//     cout << area (robj, tobj) << endl;
+// }
